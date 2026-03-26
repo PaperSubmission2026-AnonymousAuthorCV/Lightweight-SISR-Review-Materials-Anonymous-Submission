@@ -1,55 +1,51 @@
-# Lightweight-SISR-Review-Materials-Anonymous-Submission
 # Anonymous Review Materials for BDSRNet
 
 This anonymous repository provides supplementary review materials for the submission:
 **"BDSRNet for Lightweight Image Super-Resolution"**
 
-## Notice on Anonymity and Code Availability
-To comply with the double-blind review policy, the full training and inference source code is not included in this repository during the review stage. 
+<div align="center">
+  <img src="Images/performance_vs_params.svg" alt="Trade-off">
+  <br>
+  <b>Accuracy–Efficiency Trade-off: A visualization of the performance–parameter–FLOPs trade-off on Urban100 (×4).</b>
+</div>
 
-This repository is strictly intended to support the inspection of the reported results by providing:
+---
+
+## Notice on Anonymity and Code Availability
+To comply with the double-blind review policy, all supplementary materials in this repository—including experimental logs, evaluation scripts, and visual materials—have been strictly anonymized. 
+
+Please note that the core training and inference source codes are temporarily omitted during the review stage. This repository is intended to support the inspection of the reported results by providing:
 - quantitative result summaries,
 - network architecture and visual comparisons,
 - anonymized training and testing logs, and
-- the profiling script used for hardware efficiency evaluation.
+- the unified profiling script used for efficiency evaluation.
 
-The complete executable codebase and pre-trained weights will be released after the review process, subject to the venue policy.
+**The complete executable codebase and pre-trained weights will be made publicly available upon acceptance of the manuscript.**
 
 ---
 
 ## 1. Quantitative Results and Efficiency Analysis
-This section summarizes the main quantitative results reported in the manuscript.
+This section provides the detailed data tables corresponding to the quantitative evaluation in the manuscript.
 
-### Table 1: Standard Benchmark Performance
-Benchmark results (PSNR / SSIM) on five standard super-resolution datasets are provided in:
-- `Images/performance_table.png`
+<div align="center">
+  <b>Table 1: Benchmark results (PSNR / SSIM) on five standard super-resolution datasets.</b>
+  <br>
+  <img src="Images/performance_table.png" alt="Benchmark Results">
+</div>
+<br>
 
-![Benchmark Results](Images/performance_table.png)
+<div align="center">
+  <b>Table 2: Computational efficiency and perceptual-quality comparisons (LPIPS and NIQE) on Urban100 (×4). All models are evaluated under a strictly unified hardware setting and a fixed output size (1280×720) to ensure fair comparison.</b>
+  <br>
+  <img src="Images/urban100_x4_efficiency_perceptual_comparison.png" alt="Efficiency Results">
+</div>
+<br>
 
-### Table 2: Computational Efficiency and Perceptual Quality
-Efficiency and perceptual-quality comparisons on the Urban100 dataset for $\times 4$ SR are provided in:
-- `Images/urban100_x4_efficiency_perceptual_comparison.png`
-
-This table reports:
-- parameter count,
-- FLOPs,
-- inference latency,
-- LPIPS, and
-- NIQE.
-
-![Efficiency Results](Images/urban100_x4_efficiency_perceptual_comparison.png)
-
-### Table 3: Zero-shot Remote-Sensing Evaluation
-Results demonstrating the zero-shot cross-domain performance on UCM and RSSCN7 datasets are provided in:
-- `Images/zeroshot_remote_sensing.png`
-
-![Zero-shot RS](Images/zeroshot_remote_sensing.png)
-
-### Accuracy–Efficiency Trade-off
-A visualization of the performance–parameter–FLOPs trade-off is provided in:
-- `Images/performance_vs_params.svg`
-
-![Trade-off](Images/performance_vs_params.svg)
+<div align="center">
+  <b>Table 3: Results demonstrating the zero-shot cross-domain performance on UCM and RSSCN7 remote-sensing datasets.</b>
+  <br>
+  <img src="Images/zeroshot_remote_sensing.png" alt="Zero-shot RS">
+</div>
 
 ---
 
@@ -57,18 +53,27 @@ A visualization of the performance–parameter–FLOPs trade-off is provided in:
 This section provides visual materials corresponding to the network design and reconstruction performance.
 
 ### Overall Architecture
-The framework diagram of BDSRNet is provided in:
-- `Images/framework.svg`
-
-![Framework](Images/framework.svg)
+<div align="center">
+  <img src="Images/framework.svg" alt="Framework">
+  <br>
+  <b>The overall framework diagram of BDSRNet.</b>
+</div>
 
 ### Visual Comparisons
-Reconstructed image comparisons against baseline methods are provided in:
-- Urban100: `Images/visual_comparison_urban100.svg`
-- Manga109: `Images/visual_comparison_manga109.svg`
+Reconstructed image comparisons against baseline methods are provided below:
 
-![Urban100 Comparison](Images/visual_comparison_urban100.svg)
-![Manga109 Comparison](Images/visual_comparison_manga109.svg)
+<div align="center">
+  <img src="Images/visual_comparison_urban100.svg" alt="Urban100 Comparison">
+  <br>
+  <b>Visual comparison of reconstructed high-frequency textures on the Urban100 dataset.</b>
+</div>
+<br>
+
+<div align="center">
+  <img src="Images/visual_comparison_manga109.svg" alt="Manga109 Comparison">
+  <br>
+  <b>Visual comparison of reconstructed structural details on the Manga109 dataset.</b>
+</div>
 
 ---
 
@@ -76,15 +81,17 @@ Reconstructed image comparisons against baseline methods are provided in:
 To support the inspection of the reported training and testing results, this repository includes anonymized raw logs exported from our experimental runs.
 
 ### Training Logs
-The directory `Training_Logs/` contains logs for the $\times 2$, $\times 3$, and $\times 4$ models, which record:
-- iteration records,
+The directory `Training_Logs/` contains anonymized logs for the $\times 2$, $\times 3$, and $\times 4$ models, which record:
+- iteration configurations,
 - training loss (`L1Loss`) values, and
 - validation PSNR tracking.
 
+*(Note: To protect the core architectural innovations during the review stage, the detailed network topology prints—such as specific convolutions and attention layers—have been redacted from the log headers. All training metrics and iteration histories remain intact and completely authentic.)*
+
 ### Testing Logs
-The directory `Testing_Logs/` contains the raw output logs parsing the evaluation on:
+The directory `Testing_Logs/` contains the anonymized raw output logs parsing the evaluation on:
 - five standard benchmark datasets, and
-- two zero-shot remote-sensing datasets.
+- two remote-sensing datasets for zero-shot evaluation.
 
 ---
 
@@ -92,11 +99,16 @@ The directory `Testing_Logs/` contains the raw output logs parsing the evaluatio
 The script:
 - `unified_benchmark_params_flops_latency.py`
 
-is included to document the exact protocol used for the hardware efficiency evaluation in the manuscript.
+is included to document the exact unified protocol used for the hardware efficiency evaluation in the manuscript, ensuring a fair and reproducible benchmark.
 
 This script details the profiling setup for:
 - parameter counting,
-- FLOPs estimation, and
+- FLOPs estimation (based on a fixed 1280×720 reference output resolution), and
 - GPU latency measurement.
 
-Latency measurement follows a fixed protocol with warm-up iterations and synchronized timing.
+Latency measurement follows a fixed protocol with explicit warm-up iterations and synchronized timing to prevent benchmarking biases.
+
+---
+
+### Acknowledgment
+**We sincerely thank the Editor and Anonymous Reviewers for their valuable time and effort in evaluating this manuscript.**
