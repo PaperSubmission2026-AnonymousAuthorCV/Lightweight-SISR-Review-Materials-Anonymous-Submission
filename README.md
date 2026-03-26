@@ -1,55 +1,105 @@
 # Lightweight-SISR-Review-Materials-Anonymous-Submission
-# [Anonymous Submission] BDSRNet for Lightweight Image Super-Resolution
+# [Anonymous Submission] Review Materials for BDSRNet
 
-> **📢 Notice for Reviewers (Double-Blind Policy & Reproducibility):**
-> To strictly comply with the double-blind peer-review policy and protect unpublished architectural innovations, the core PyTorch module source codes are temporarily omitted in this initial submission. 
-> 
-> However, we are committed to full transparency. This repository serves as a **Comprehensive Experimental Archive**, providing extensive visual proofs, authentic raw training/testing logs, and our strict evaluation scripts to fully support the authenticity of our reported results. 
-> 
-> **The complete executable codebase and pre-trained weights will be made publicly available immediately upon acceptance.**
+This anonymous repository provides supplementary review materials for the submission  
+**“BDSRNet for Lightweight Image Super-Resolution.”**
+
+## Notice on Anonymity and Code Availability
+
+To comply with the double-blind review policy, the full training and inference source code is not included in this anonymous repository during the review stage.
+
+This repository is intended to support inspection of the reported results by providing:
+- quantitative result summaries,
+- visual materials,
+- anonymized training and testing logs, and
+- the profiling script used for efficiency evaluation.
+
+The complete executable codebase and pre-trained weights will be released after the review process, subject to the venue policy.
 
 ---
 
-## 1. Quantitative Results & Efficiency Analysis
-To provide a quick overview of our model's superiority, we summarize the main quantitative results here. Detailed output parsing can be verified in the `Testing_Logs/` directory.
+## 1. Quantitative Results and Efficiency Analysis
+
+This section summarizes the main quantitative results reported in the manuscript.
 
 ### Table 1: Benchmark Performance (PSNR / SSIM)
-Comprehensive evaluation across 5 standard SR benchmarks and 2 zero-shot remote sensing datasets. 
 
-![Benchmark Results](Images/performance_table.png)
+Benchmark results on five standard super-resolution datasets and two zero-shot remote-sensing datasets are provided in:
 
-### Table 2: Computational Efficiency & Perceptual Quality
-We profile the hardware efficiency alongside perceptual metrics (LPIPS and NIQE) on the Urban100 dataset for $\times 4$ SR. BDSRNet achieves highly competitive perceptual quality while maintaining a strict lightweight footprint.
-*(Note: The exact benchmarking code used for Params/FLOPs/Latency is provided in `unified_benchmark_params_flops_latency.py` for full transparency.)*
+- `Images/performance_table.png`
 
-![Efficiency Results](Images/urban100_x4_efficiency_perceptual_comparison.png)
+### Table 2: Computational Efficiency and Perceptual Quality
 
-### Performance vs. Parameters Trade-off
-Visualizing the accuracy-efficiency trade-off on Urban100 ($\times 4$).
+Efficiency and perceptual-quality comparisons on Urban100 for $\times4$ SR are provided in:
 
-![Performance vs Params](Images/performance_vs_params.svg)
+- `Images/urban100_x4_efficiency_perceptual_comparison.png`
 
----
+This figure reports:
+- parameter count,
+- FLOPs,
+- inference latency,
+- LPIPS, and
+- NIQE.
 
-## 2. Visual Highlights
-We provide high-resolution visual materials that could not be fully displayed in the manuscript due to space constraints.
+### Accuracy–Efficiency Trade-off Visualization
 
-### Overall Architecture of BDSRNet
-![Framework](Images/framework.svg)
+A visualization of the performance–parameter–FLOPs trade-off is provided in:
 
----
-
-## 3. Authentic Experimental Logs
-To eliminate any concerns regarding result fabrication, we provide the raw execution logs directly exported from our server for all scales ($\times 2, \times 3, \times 4$):
-* **`Training_Logs/`**: Real-time tracking of up to 1,000,000 iterations, demonstrating the stable convergence, `L1Loss` dropping curves, and validation PSNR climbing history.
-* **`Testing_Logs/`**: Comprehensive parsing results on both standard benchmarks and zero-shot remote sensing datasets.
+- `Images/performance_vs_params.svg`
 
 ---
 
-## 4. Rigorous Evaluation Protocol
-Lightweight SISR heavily relies on fair computational benchmarking. We provide our profiling script (`unified_benchmark_params_flops_latency.py`) directly in the root directory. 
+## 2. Visual Materials
 
-Reviewers are encouraged to inspect this script to verify our strict evaluation protocol, which utilizes `thop` for parameter/FLOPs counting, explicit GPU warm-ups, and precise `torch.cuda.synchronize()` operations to ensure unbiased and accurate latency profiling across all ablation variants.
+This section provides visual materials corresponding to the manuscript figures.
+
+### Overall Architecture
+
+The overall architecture of BDSRNet is provided in:
+
+- `Images/framework.svg`
 
 ---
-**Thank you for your time, effort, and constructive feedback in reviewing our work!**
+
+## 3. Anonymized Experimental Logs
+
+To support inspection of the reported training and testing results, this repository includes anonymized raw logs exported from our experimental runs.
+
+### Training Logs
+The directory `Training_Logs/` contains training logs for the $\times2$, $\times3$, and $\times4$ models, including:
+- iteration records,
+- training loss values, and
+- validation PSNR records.
+
+### Testing Logs
+The directory `Testing_Logs/` contains testing logs for:
+- standard benchmark datasets, and
+- zero-shot remote-sensing evaluation.
+
+---
+
+## 4. Evaluation Script for Efficiency Measurement
+
+The script
+
+- `unified_benchmark_params_flops_latency.py`
+
+is included to document the protocol used for efficiency evaluation in the manuscript.
+
+The script includes the profiling setup for:
+- parameter counting,
+- FLOPs estimation, and
+- GPU latency measurement.
+
+Latency measurement follows a fixed protocol with warm-up iterations and synchronized timing.
+
+---
+
+## Repository Structure
+
+```text
+Images/
+Training_Logs/
+Testing_Logs/
+unified_benchmark_params_flops_latency.py
+README.md
