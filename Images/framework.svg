@@ -1135,7 +1135,6 @@
   <path class="st39" d="M418.56,14.77v52.82c0,5.5-4.06,9.95-9.06,9.95h-150.61c-5,0-9.06-4.46-9.06-9.95V15.83c0-5.5,4.06-9.95,9.06-9.95h154.14c3.06,0,5.53,3.99,5.53,8.9Z"/>
   <path class="st28" d="M249.82,13.43v56.55c0,4.17-3.31,7.56-7.39,7.56H111.15c-4.08,0-7.39-3.38-7.39-7.56V14.77c0-4.91,2.97-8.9,6.64-8.9h132.04c4.08,0,7.39,3.38,7.39,7.56Z"/>
   <rect class="st29" x="123.84" y="15.87" width="15.16" height="58.51" rx="3.92" ry="3.92"/>
-  <text class="st64" transform="translate(133.51 67.61) rotate(-90)"><tspan x="0" y="0">BSConv(k=3)</tspan></text>
   <path class="st117" d="M373.46,68.71c0,2.17-1.76,3.92-3.92,3.92h-3.66s-3.66,0-3.66,0c-2.17,0-3.92-1.76-3.92-3.92V18.04c0-2.17,1.76-3.92,3.92-3.92h3.66s3.66,0,3.66,0c2.17,0,3.92,1.76,3.92,3.92v19.12s0,31.54,0,31.54Z"/>
   <text class="st62" transform="translate(368.24 61.29) rotate(-90)"><tspan x="0" y="0">3×3 Conv</tspan></text>
   <g>
@@ -1320,11 +1319,10 @@
     <text class="st18" transform="translate(221.75 120.15)"><tspan x="0" y="0">BDM</tspan></text>
     <text class="st3" transform="translate(243.63 120.11)"><tspan x="0" y="0">＋</tspan></text>
   </g>
-  <text class="st64" transform="translate(500.83 146.55) rotate(-90)"><tspan x="0" y="0">BSConv(k=3)</tspan></text>
-  <text class="st63" transform="translate(8.94 176.99)"><tspan x="0" y="0">BSConv (k): Blueprint Separable Convolution</tspan></text>
+  <text class="st63" transform="translate(6.94 176.99)"><tspan x="0" y="0">BSConv-U(k): Blueprint Separable Convolution</tspan></text>
   <text class="st63" transform="translate(425.75 176.99)"><tspan x="0" y="0">PixelShuffle: Upsampling Operation</tspan></text>
-  <text class="st63" transform="translate(142.66 176.99)"><tspan x="0" y="0">1×1 Conv: Pointwise Convolution</tspan></text>
-  <text class="st63" transform="translate(244.76 176.99)"><tspan x="0" y="0">3×3 Conv: Standard Convolution</tspan></text>
+  <text class="st63" transform="translate(145.66 176.99)"><tspan x="0" y="0">1×1 Conv: Pointwise Convolution</tspan></text>
+  <text class="st63" transform="translate(246.76 176.99)"><tspan x="0" y="0">3×3 Conv: Standard Convolution</tspan></text>
   <g>
     <text class="st65" transform="translate(352.59 176.99)"><tspan class="st182" x="0" y="0"> </tspan><tspan class="st89" x="1.38" y="0">: element-wise addition</tspan></text>
     <g>
@@ -1333,4 +1331,6 @@
       <line class="st2" x1="348.7" y1="171.07" x2="348.7" y2="178.15"/>
     </g>
   </g>
+  <text class="st64" transform="translate(500.83 150.77) rotate(-90)"><tspan x="0" y="0">BSConv-U(k=3)</tspan></text>
+  <text class="st64" transform="translate(133.51 71.83) rotate(-90)"><tspan x="0" y="0">BSConv-U(k=3)</tspan></text>
 </svg>
