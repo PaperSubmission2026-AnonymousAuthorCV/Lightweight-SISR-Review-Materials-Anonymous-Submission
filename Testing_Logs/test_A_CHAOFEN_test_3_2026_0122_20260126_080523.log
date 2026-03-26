@@ -1,0 +1,203 @@
+2026-01-26 08:05:23,820 INFO: 
+                ____                _       _____  ____
+               / __ ) ____ _ _____ (_)_____/ ___/ / __ \
+              / __  |/ __ `// ___// // ___/\__ \ / /_/ /
+             / /_/ // /_/ /(__  )/ // /__ ___/ // _, _/
+            /_____/ \__,_//____//_/ \___//____//_/ |_|
+     ______                   __   __                 __      __
+    / ____/____   ____   ____/ /  / /   __  __ _____ / /__   / /
+   / / __ / __ \ / __ \ / __  /  / /   / / / // ___// //_/  / /
+  / /_/ // /_/ // /_/ // /_/ /  / /___/ /_/ // /__ / /<    /_/
+  \____/ \____/ \____/ \____/  /_____/\____/ \___//_/|_|  (_)
+    
+
+2026-01-26 08:05:23,820 INFO: 
+  name: A_CHAOFEN_test_3_2026_0122
+  suffix: None
+  model_type: SRModel
+  scale: 3
+  crop_border: None
+  num_gpu: 1
+  manual_seed: 0
+  datasets:[
+    test_1:[
+      name: set5
+      type: PairedImageDataset
+      dataroot_gt: /home/root/code/BDSRNet-main/datasets/sr_test/HR/Set5/x3
+      dataroot_lq: /home/root/code/BDSRNet-main/datasets/sr_test/LRBI/Set5/x3
+      filename_tmpl: {}_LRBI_x3
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 3
+    ]
+    test_2:[
+      name: set14
+      type: PairedImageDataset
+      dataroot_gt: /home/root/code/BDSRNet-main/datasets/sr_test/HR/Set14/x3
+      dataroot_lq: /home/root/code/BDSRNet-main/datasets/sr_test/LRBI/Set14/x3
+      filename_tmpl: {}_LRBI_x3
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 3
+    ]
+    test_3:[
+      name: BSD100
+      type: PairedImageDataset
+      dataroot_gt: /home/root/code/BDSRNet-main/datasets/sr_test/HR/B100/x3
+      dataroot_lq: /home/root/code/BDSRNet-main/datasets/sr_test/LRBI/B100/x3
+      filename_tmpl: {}_LRBI_x3
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 3
+    ]
+    test_4:[
+      name: Urban100
+      type: PairedImageDataset
+      dataroot_gt: /home/root/code/BDSRNet-main/datasets/sr_test/HR/Urban100/x3
+      dataroot_lq: /home/root/code/BDSRNet-main/datasets/sr_test/LRBI/Urban100/x3
+      filename_tmpl: {}_LRBI_x3
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 3
+    ]
+    test_5:[
+      name: Manga109
+      type: PairedImageDataset
+      dataroot_gt: /home/root/code/BDSRNet-main/datasets/sr_test/HR/Manga109/x3
+      dataroot_lq: /home/root/code/BDSRNet-main/datasets/sr_test/LRBI/Manga109/x3
+      filename_tmpl: {}LRBI_x3
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 3
+    ]
+    test_6:[
+      name: UCM
+      type: PairedImageDataset
+      dataroot_gt: /home/root/code/BDSRNet-main/datasets/UCMerced/test/HR_x3
+      dataroot_lq: /home/root/code/BDSRNet-main/datasets/UCMerced/test/LR_x3
+      filename_tmpl: {}_LRBI_x3
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 3
+    ]
+    test_7:[
+      name: RSSCN7
+      type: PairedImageDataset
+      dataroot_gt: /home/root/code/BDSRNet-main/datasets/RSSCN7/test/HR_x3
+      dataroot_lq: /home/root/code/BDSRNet-main/datasets/RSSCN7/test/LR_x3
+      filename_tmpl: {}_LRBI_x3
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 3
+    ]
+  ]
+  network_g:[
+    type: BDSRNet
+    num_in_ch: 3
+    num_out_ch: 3
+    num_feat: 56
+    num_atten: 56
+    num_block: 8
+    upscale: 3
+    conv: BSConvU
+  ]
+  path:[
+    pretrain_network_g: /home/root/code/BDSRNet-main/experiments/train_x3_20260122/models/net_g_830000.pth
+    strict_load_g: True
+    results_root: /home/root/code/BDSRNet-main/results/A_CHAOFEN_test_3_2026_0122
+    log: /home/root/code/BDSRNet-main/results/A_CHAOFEN_test_3_2026_0122
+    visualization: /home/root/code/BDSRNet-main/results/A_CHAOFEN_test_3_2026_0122/visualization
+  ]
+  val:[
+    save_img: True
+    suffix: None
+    pbar: True
+    metrics:[
+      psnr:[
+        type: calculate_psnr
+        crop_border: 3
+        test_y_channel: True
+      ]
+      ssim:[
+        type: calculate_ssim
+        crop_border: 3
+        test_y_channel: True
+      ]
+    ]
+  ]
+  dist: False
+  rank: 0
+  world_size: 1
+  auto_resume: False
+  is_train: False
+
+2026-01-26 08:05:23,821 INFO: Dataset [PairedImageDataset] - set5 is built.
+2026-01-26 08:05:23,822 INFO: Number of test images in set5: 5
+2026-01-26 08:05:23,823 INFO: Dataset [PairedImageDataset] - set14 is built.
+2026-01-26 08:05:23,823 INFO: Number of test images in set14: 14
+2026-01-26 08:05:23,828 INFO: Dataset [PairedImageDataset] - BSD100 is built.
+2026-01-26 08:05:23,828 INFO: Number of test images in BSD100: 100
+2026-01-26 08:05:23,833 INFO: Dataset [PairedImageDataset] - Urban100 is built.
+2026-01-26 08:05:23,833 INFO: Number of test images in Urban100: 100
+2026-01-26 08:05:23,839 INFO: Dataset [PairedImageDataset] - Manga109 is built.
+2026-01-26 08:05:23,839 INFO: Number of test images in Manga109: 109
+2026-01-26 08:05:23,897 INFO: Dataset [PairedImageDataset] - UCM is built.
+2026-01-26 08:05:23,897 INFO: Number of test images in UCM: 1050
+2026-01-26 08:05:23,981 INFO: Dataset [PairedImageDataset] - RSSCN7 is built.
+2026-01-26 08:05:23,982 INFO: Number of test images in RSSCN7: 1400
+2026-01-26 08:05:24,020 INFO: Network [BDSRNet] is created.
+2026-01-26 08:05:34,098 INFO: Network: BDSRNet, with parameters: 398,435
+2026-01-26 08:05:34,098 INFO: BDSRNet(
+  
+)
+2026-01-26 08:05:34,110 INFO: Loading BDSRNet model from /home/root/code/BDSRNet-main/experiments/train_x3_20260122/models/net_g_830000.pth, with param key: [params].
+2026-01-26 08:05:34,144 INFO: Model [SRModel] is created.
+2026-01-26 08:05:34,144 INFO: Testing set5...
+2026-01-26 08:05:34,668 INFO: Validation set5
+	 # psnr: 34.6640	Best: 34.6640 @ A_CHAOFEN_test_3_2026_0122 iter
+	 # ssim: 0.9294	Best: 0.9294 @ A_CHAOFEN_test_3_2026_0122 iter
+
+2026-01-26 08:05:34,669 INFO: Testing set14...
+2026-01-26 08:05:38,864 INFO: Validation set14
+	 # psnr: 30.5978	Best: 30.5978 @ A_CHAOFEN_test_3_2026_0122 iter
+	 # ssim: 0.8466	Best: 0.8466 @ A_CHAOFEN_test_3_2026_0122 iter
+
+2026-01-26 08:05:38,867 INFO: Testing BSD100...
+2026-01-26 08:05:57,212 INFO: Validation BSD100
+	 # psnr: 29.2605	Best: 29.2605 @ A_CHAOFEN_test_3_2026_0122 iter
+	 # ssim: 0.8091	Best: 0.8091 @ A_CHAOFEN_test_3_2026_0122 iter
+
+2026-01-26 08:05:57,213 INFO: Testing Urban100...
+2026-01-26 08:07:09,682 INFO: Validation Urban100
+	 # psnr: 28.7236	Best: 28.7236 @ A_CHAOFEN_test_3_2026_0122 iter
+	 # ssim: 0.8629	Best: 0.8629 @ A_CHAOFEN_test_3_2026_0122 iter
+
+2026-01-26 08:07:09,682 INFO: Testing Manga109...
+2026-01-26 08:08:42,644 INFO: Validation Manga109
+	 # psnr: 34.4621	Best: 34.4621 @ A_CHAOFEN_test_3_2026_0122 iter
+	 # ssim: 0.9495	Best: 0.9495 @ A_CHAOFEN_test_3_2026_0122 iter
+
+2026-01-26 08:08:42,645 INFO: Testing UCM...
+2026-01-26 08:10:50,156 INFO: Validation UCM
+	 # psnr: 31.6264	Best: 31.6264 @ A_CHAOFEN_test_3_2026_0122 iter
+	 # ssim: 0.8665	Best: 0.8665 @ A_CHAOFEN_test_3_2026_0122 iter
+
+2026-01-26 08:10:50,157 INFO: Testing RSSCN7...
+2026-01-26 08:15:25,659 INFO: Validation RSSCN7
+	 # psnr: 30.8230	Best: 30.8230 @ A_CHAOFEN_test_3_2026_0122 iter
+	 # ssim: 0.8160	Best: 0.8160 @ A_CHAOFEN_test_3_2026_0122 iter
+
