@@ -30,21 +30,21 @@ This section provides the detailed data tables corresponding to the quantitative
 <div align="center">
   <b>Table 1: Benchmark results (PSNR / SSIM) on five standard super-resolution datasets.</b>
   <br><br>
-  <img src="Images/performance_table.png" alt="Benchmark Results" width="85%">
+  <img src="Images/performance_table.png" alt="Benchmark Results" width="90%">
 </div>
 <br><br>
 
 <div align="center">
   <b>Table 2: Computational efficiency and perceptual-quality comparisons (LPIPS and NIQE) on Urban100 (×4). All models are evaluated under a strictly unified hardware setting and a fixed output size (1280×720) to ensure fair comparison.</b>
   <br><br>
-  <img src="Images/urban100_x4_efficiency_perceptual_comparison.png" alt="Efficiency Results" width="85%">
+  <img src="Images/urban100_x4_efficiency_perceptual_comparison.png" alt="Efficiency Results" width="90%">
 </div>
 <br><br>
 
 <div align="center">
   <b>Table 3: Results demonstrating the zero-shot cross-domain performance on UCM and RSSCN7 remote-sensing datasets.</b>
   <br><br>
-  <img src="Images/zeroshot_remote_sensing.png" alt="Zero-shot RS" width="85%">
+  <img src="Images/zeroshot_remote_sensing.png" alt="Zero-shot RS" width="90%">
 </div>
 
 ---
@@ -63,14 +63,14 @@ This section provides visual materials corresponding to the network design and r
 Reconstructed image comparisons against baseline methods are provided below:
 
 <div align="center">
-  <img src="Images/visual_comparison_urban100.svg" alt="Urban100 Comparison" width="100%">
+  <img src="Images/visual_comparison_urban100.svg" alt="Urban100 Comparison" width="85%">
   <br><br>
   <b>Visual comparison of reconstructed structured patterns and architectural lines on the Urban100 dataset.</b>
 </div>
 <br><br>
 
 <div align="center">
-  <img src="Images/visual_comparison_manga109.svg" alt="Manga109 Comparison" width="100%">
+  <img src="Images/visual_comparison_manga109.svg" alt="Manga109 Comparison" width="85%">
   <br><br>
   <b>Visual comparison of reconstructed sharp edges and fine line details on the Manga109 dataset.</b>
 </div>
