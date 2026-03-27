@@ -20,7 +20,7 @@ Please note that the core training and inference source codes are temporarily om
 - anonymized training and testing logs, and
 - the profiling script used for efficiency evaluation.
 
-**The complete executable codebase and pre-trained weights will be made publicly available upon acceptance of the manuscript.**
+**The complete executable codebase, pre-trained weights, and the full sets of reconstructed high-resolution images will be made publicly available upon acceptance of the manuscript.**
 
 ---
 
