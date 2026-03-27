@@ -4,7 +4,7 @@ This anonymous repository provides supplementary review materials for the submis
 **"BDSRNet for Lightweight Image Super-Resolution"**
 
 <div align="center">
-  <img src="Images/performance_vs_params.png" alt="Trade-off" width="850">
+  <img src="Images/performance_vs_params.svg" alt="Trade-off" width="850">
   <br><br>
   <b>Accuracy–Efficiency Trade-off: A visualization of the performance–parameter–FLOPs trade-off on Urban100 (×4).</b>
 </div>
@@ -54,7 +54,7 @@ This section provides visual materials corresponding to the network design and r
 
 ### Overall Architecture
 <div align="center">
-  <img src="Images/framework.png" alt="Framework" width="950">
+  <img src="Images/framework.svg" alt="Framework" width="950">
   <br><br>
   <b>The overall framework diagram of BDSRNet.</b>
 </div>
@@ -63,14 +63,14 @@ This section provides visual materials corresponding to the network design and r
 Reconstructed image comparisons against baseline methods are provided below:
 
 <div align="center">
-  <img src="Images/visual_comparison_urban100.png" alt="Urban100 Comparison" width="950">
+  <img src="Images/visual_comparison_urban100.svg" alt="Urban100 Comparison" width="950">
   <br><br>
   <b>Visual comparison of reconstructed structured patterns and architectural lines on the Urban100 dataset.</b>
 </div>
 <br><br>
 
 <div align="center">
-  <img src="Images/visual_comparison_manga109.png" alt="Manga109 Comparison" width="950">
+  <img src="Images/visual_comparison_manga109.svg" alt="Manga109 Comparison" width="950">
   <br><br>
   <b>Visual comparison of reconstructed sharp edges and fine line details on the Manga109 dataset.</b>
 </div>
